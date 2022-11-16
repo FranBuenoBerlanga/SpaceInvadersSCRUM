@@ -8,22 +8,41 @@ public class NaveEnemiga {
     //Atributos
 
     private float posX, posY;
-    private boolean estasviva;
+    private float velX, velY;
+    private float signoX, signoY;
+    private boolean estaviva, moverseIzq, moverseDer;
     Texture img;
     SpriteBatch batch;
 
     //Comportamiento
 
+    //Constructor
     public NaveEnemiga(float nposX, float nposY){
         posX = nposX;
         posY = nposY;
-        estasviva = true;
+        estaviva = true;
+        moverseIzq = true;
+        moverseDer = true;
         img = new Texture("NaveEnemiga.png");
+        velX = 0f;
+        velY = 0f;
     }
 
+    //Pintarse
     public void pintarse(SpriteBatch tablero){
-        tablero.begin();
-        tablero.draw(img, 150, 150);
-        tablero.end();
+
+        tablero.draw(img, 100, 100);
+
     }
+
+    //Disposar
+    public void dispose() {
+
+        if (img != null){
+            img.dispose();
+        }
+
+    }
+
+
 }

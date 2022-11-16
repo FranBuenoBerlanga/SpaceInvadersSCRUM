@@ -8,8 +8,11 @@ public class NaveAliada {
     //ATRIBUTOS
     //posx, posy
     private float posX, posY;
-    private boolean estaviva;
+    private float velX, velY;
+    private float signoX, signoY;
+    private boolean estaviva, moverseIzq, moverseDer;
     Texture img;
+    SpriteBatch batch;
 
     //COMPORTAMIENTOS
     //Constructor
@@ -17,14 +20,19 @@ public class NaveAliada {
         posX = nposX;
         posY = nposY;
         estaviva = true;
+        moverseIzq = false;
+        moverseDer = false;
         img = new Texture("NaveAliada.png");
+        velX = 0f;
+        velY = 0f;
+
     }
 
     //Pintarse, en un SpriteBatch
     public void pintarse(SpriteBatch tablero) {
-        tablero.begin();
+
         tablero.draw(img, 100, 100);
-        tablero.end();
+
     }
 
     //Disposar
@@ -40,11 +48,16 @@ public class NaveAliada {
     public void moverse(String letra) {
 
         if (letra == "A" || letra == "a") {
-            posX = posX;
+            moverseIzq = true;
+            posX = posX + velX * (- signoX);
         }
+        //WHILE EL BOTON SIGA PULSADO
+
         if (letra == "d" || letra == "D") {
-            posX = posX;
+            moverseDer = true;
+            posX = posX + velX * signoX;
         }
+        //WHILE EL BOTON SIGA PULSADO
 
     }
 
