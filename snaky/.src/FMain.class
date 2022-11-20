@@ -1,0 +1,105 @@
+' Gambas class file
+
+'estado ventana principal
+'Una serpiente
+Private culebra As Serpiente
+Private pasos As Integer
+Private misonidoCrecer As Sound
+Private misonidoFinal As Sound
+Private misonidoMelodia As Music
+Private misonidoMoverse As Sound
+
+
+'comportamiento (eventos)
+
+'Qué hacer cuando pulsan Start
+Public Sub Start_Click()
+
+  '1º Creo una serpiente
+  culebra = New Serpiente(200, 300, Color.DarkYellow, "D")
+    Music.Load("melodia.wav")
+    Music.Volume = 40
+    Music.Play
+  '2º Pongo a funcionar el crono
+  Crono.Start()
+  PuntosCon.Text = "0"
+  pasos = 0
+  Tablero.SetFocus()  
+  
+End
+
+
+'Qué hacer cuando pulsan pause
+Public Sub Pause_Click()
+
+   Crono.Enabled = False
+  Music.Stop
+
+End
+
+'Este comportamiento es para pintarse
+Public Sub Tablero_Draw()
+ 
+  'Tengo que pedir a la serpiente que se dibuje... 
+  If (culebra <> Null) Then
+    
+    culebra.pintarse(Tablero)
+  Endif
+    
+   
+  
+End
+
+
+Public Sub Crono_Timer()
+
+  pasos = pasos + 1 
+  misonidoCrecer = Sound.Load("crecer.wav")
+  misonidoCrecer.Volume = 30
+  misonidoFinal = Sound.Load("final.wav")
+  misonidoFinal.Volume = 30
+  misonidoMoverse = Sound.Load("moverse.wav")
+  misonidoMoverse.Volume = 30
+  
+
+  If pasos = 3 Then 
+      pasos = 0
+      culebra.crecer()
+      misonidoCrecer.Play 'reproducimos el sonido
+     
+      
+  Else
+     culebra.moverse()
+     PuntosCon.Text = PuntosCon.Text + 1
+     misonidoMoverse.Play
+     
+     
+  Endif
+  
+   If (culebra.estasmuerta(Tablero.Width, Tablero.Height)) Then 
+        Music.Volume = 0
+        misonidoFinal.Play
+        crono.Stop()
+        Message.Info("Game Over")
+        PuntosCon.Text = 0
+         
+        
+      Endif
+      
+
+  
+  Tablero.Refresh()
+
+End
+
+'Qué hacer cuando pulsan teclas
+Public Sub Tablero_KeyPress()
+  Dim miTecla As String
+
+  miTecla = UCase$(Key.Text)
+  If (miTecla = "W" Or miTecla = "A" Or miTecla = "S" Or miTecla = "D") Then
+     culebra.cambiaDir(miTecla)
+  Endif  
+
+End
+

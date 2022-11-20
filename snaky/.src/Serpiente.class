@@ -1,0 +1,159 @@
+' Gambas class file
+
+'####################################################
+
+'ESTADO - ATRIBUTOS
+
+'####################################################
+
+
+' es un conjunto de cuadrados ordenado, en forma de lista, donde
+' el primero de la lista queremos que sea la cabeza
+Private listaCuadrados As New Cuadrado[]
+
+'tengo que saber en cada momento si me muevo a la I, D, ARR, AB
+Private direccion As String
+
+
+'####################################################
+
+'COMPORTAMIENTO - MÉTODOS
+
+'####################################################
+
+'Constructor
+'primero ponemos public, después sub, _new para los constructores
+'después entre paréntesis tantos tripletes de parámetros como atributos (norma general)
+
+Public Sub _new(nuevaX As Short, nuevaY As Short, colorSerpiente As Integer, nuevaDir As String)
+
+
+     Dim cabeza As Cuadrado
+     
+     cabeza = New Cuadrado(100, 10, Color.DarkYellow, 20)
+     '¿cuál será el "ancho" de mi serpiente?
+     
+     ' Nos han definido la serpiente como de 20px
+     
+     
+     'Preparo la lista de cuadrados
+     listaCuadrados = New Cuadrado[]
+     
+     'añadir la cabeza al cuerpo
+     listaCuadrados.Add(cabeza)
+     
+     direccion = nuevaDir
+      
+      
+End
+
+  
+
+'Comportamiento de moverse la serpiente
+Public Sub moverse() 
+
+   Me.crecer() 
+    
+    
+
+   listaCuadrados.Pop()
+  
+End
+
+
+'Comportamiento de crecer la serpiente
+Public Sub crecer() 
+  
+   Dim cabeza As Cuadrado
+   Dim nuevaCabeza As Cuadrado
+  
+
+   cabeza = listaCuadrados[0]
+   
+   '1º creamos un cuadrado super nuevo     
+   nuevaCabeza = New Cuadrado(cabeza.getX(), cabeza.getY(), cabeza.getColor(), cabeza.getLado())
+   
+   '2ºañadimos la nueva Cabeza
+   listaCuadrados.Add(nuevaCabeza, 0)
+      
+   '3ºmovemos la cabeza a su nueva posición
+   nuevaCabeza.moverse(direccion)
+
+  
+End
+
+
+
+
+
+'Comportamiento para pintarse
+Public Sub pintarse(Tablero As DrawingArea)
+  Dim elementoAPintar As Integer
+  
+  'Para cada elemento de la lista, empezando en el 0 y terminando en el último (total-1), 
+  'pintamos cada cuadrado
+  For elementoAPintar = 0 To listaCuadrados.Count - 1
+    listaCuadrados[elementoAPintar].pintarse(Tablero)
+  Next
+  
+  
+End
+
+'Preguntamos a la serpiente si sigue viva... es lo mejor que ella sabrá
+Public Function estasMuerta(iAncho As Integer, iAlto As Integer) As Boolean
+  
+   Dim bResultado As Boolean
+   Dim cabezaSerpiente As Cuadrado
+   Dim iContador As Integer
+   Dim misonidoFinal As Sound
+   
+   'musica
+     misonidoFinal = Sound.Load("final.wav")
+    misonidoFinal.Volume = 30
+   
+   
+   cabezaSerpiente = listaCuadrados[0]
+   bResultado = False
+   
+   'si mi cabeza tiene un x menor que 0, estoy muerta
+   'si mi cabeza tiene un x mayor que el ancho, estoy muerta
+   'si mi cabeza tiene un y menor que 0, estoy muerta
+   'si mi cabeza tiene un y mayor que el alto, estoy muerta
+   If cabezaSerpiente.getX() < 0 Or cabezaSerpiente.getY() < 0 Or
+      cabezaSerpiente.getX() > iAncho Or cabezaSerpiente.getY() > iAlto Then
+      bResultado = True
+      
+   Endif
+   
+   
+   
+   'ademas
+   'si para cada cuadrado de mi cuerpo de posicion quinta (4) o mayor
+   'la x de ese cuadrado y la y de ese cuadrado son exactamente = que 
+   'los de mi cabeza, estoy muerta.
+   For iContador = 4 To listaCuadrados.Count - 1 
+      If (cabezaSerpiente.colisiona(listaCuadrados[iContador])) Then
+         bResultado = True
+      Endif
+   Next
+  
+  'si estoy muerta es porque bResultado = True
+  
+   Return bResultado
+   misonidoFinal.Play
+  
+End
+
+'Cambiamos la dirección cuando nos lo piden
+Public Sub cambiaDir(letra As String)
+  
+  'si letra es W,A,S,D y ninguna más, entonces...
+  If letra = "W" Or letra = "A" Or letra = "S" Or letra = "D" Then
+       direccion = letra
+  Endif
+        
+End
+
+
+
+

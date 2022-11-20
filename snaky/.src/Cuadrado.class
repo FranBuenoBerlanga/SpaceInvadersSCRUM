@@ -1,0 +1,106 @@
+' Gambas class file
+
+  ' ##############################################################
+  ' 
+  '   ESTADO
+  ' 
+  ' #############################################################
+' un color para pintarse
+  Private colorCuadrado As Integer
+' lado en pixeles 
+  Private lado As Short
+' necesitamos poner el cuadrado en un determinado pixeles: x, y
+  Private posX As Short
+  Private posY As Short
+
+
+  ' ##############################################################
+  ' 
+  '   COMPORTAMIENTO
+  ' 
+  ' #############################################################
+'CONSTRUCTOR
+
+Public Sub _new(nuevaposX As Short, nuevaposY As Short, nuevocolor As Integer, nuevolado As Short)
+ 
+   posX = nuevaposX
+  posY = nuevaposY
+  colorCuadrado = Color.RGB(Rand(0, 266), Rand(0, 266), Rand(0, 266))
+  lado = nuevolado
+
+ 
+ End
+
+'Moverse
+  Public Sub moverse(letra As String)
+  
+  If letra = "w" Or letra = "W" Then 
+    posY = posY - lado
+
+  Else If letra = "s" Or letra = "S" Then 
+    posY = posY + lado
+  
+  Else If letra = "a" Or letra = "A" Then 
+    posX = posX - lado
+  
+  Else If letra = "d" Or letra = "D" Then 
+    posX = posX + lado
+  Endif
+  
+  
+  
+End
+
+Public Function colisiona(otroCuadrado As Cuadrado) As Boolean
+  
+  Dim bResultado As Boolean
+  
+  If (posX = otroCuadrado.getX() And posY = otroCuadrado.getY()) Then 
+    bResultado = True
+  Else 
+    bResultado = False
+  Endif 
+  
+  Return bResultado
+End
+
+
+
+'Pintarse
+Public Sub pintarse(tablero As DrawingArea)
+  
+  Paint.Begin(tablero)
+  Paint.Brush = Paint.Color(colorCuadrado)    
+  Paint.Rectangle(posX, posY, lado, lado)    
+  Paint.Fill()
+  Paint.end
+  
+End
+
+
+'GETTERS
+
+Public Function getX() As Short
+ 
+  Return posX
+ 
+End
+
+Public Function getY() As Short
+ 
+  Return posY
+ 
+End
+
+Public Function getLado() As Short
+ 
+  Return lado
+ 
+End
+
+Public Function getColor() As Integer
+ 
+  Return colorCuadrado
+ 
+End
+
