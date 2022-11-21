@@ -1,8 +1,0 @@
-com.politecnicomalaga.spaceinvadersscrum.android-pngs-0 /home/seryi/Vídeos/SpaceInvadersSCRUM/android/build/generated/res/pngs/debug
-com.politecnicomalaga.spaceinvadersscrum.android-resValues-1 /home/seryi/Vídeos/SpaceInvadersSCRUM/android/build/generated/res/resValues/debug
-com.politecnicomalaga.spaceinvadersscrum.android-rs-2 /home/seryi/Vídeos/SpaceInvadersSCRUM/android/build/generated/res/rs/debug
-com.politecnicomalaga.spaceinvadersscrum.android-mergeDebugResources-3 /home/seryi/Vídeos/SpaceInvadersSCRUM/android/build/intermediates/incremental/debug/mergeDebugResources/merged.dir
-com.politecnicomalaga.spaceinvadersscrum.android-mergeDebugResources-4 /home/seryi/Vídeos/SpaceInvadersSCRUM/android/build/intermediates/incremental/debug/mergeDebugResources/stripped.dir
-com.politecnicomalaga.spaceinvadersscrum.android-merged_res-5 /home/seryi/Vídeos/SpaceInvadersSCRUM/android/build/intermediates/merged_res/debug
-com.politecnicomalaga.spaceinvadersscrum.android-android-6 /home/seryi/Vídeos/SpaceInvadersSCRUM/android/res
-com.politecnicomalaga.spaceinvadersscrum.android-debug-7 /home/seryi/Vídeos/SpaceInvadersSCRUM/android/src/debug/res
