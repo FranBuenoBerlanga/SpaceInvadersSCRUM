@@ -30,7 +30,7 @@ Public Sub _new(nuevaX As Short, nuevaY As Short, colorSerpiente As Integer, nue
 
      Dim cabeza As Cuadrado
      
-     cabeza = New Cuadrado(100, 10, Color.DarkYellow, 20)
+     cabeza = New Cuadrado(100, 20, Color.DarkYellow, 20)
      '¿cuál será el "ancho" de mi serpiente?
      
      ' Nos han definido la serpiente como de 20px
@@ -153,7 +153,6 @@ Public Sub cambiaDir(letra As String)
   Endif
         
 End
-
 
 
 
