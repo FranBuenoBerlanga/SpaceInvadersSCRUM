@@ -32,8 +32,16 @@ End
 'Qué hacer cuando pulsan pause
 Public Sub Pause_Click()
 
-   Crono.Enabled = False
-  Music.Stop
+      If (crono.Enabled) Then
+      'estamos jugando, pausamos...
+      Pause.Text = "Continue"
+      crono.Stop()   'pausamos el juego
+  Else
+      'si estoy pausado, continuamos...
+      Pause.Text = "Pause"
+      crono.Start()
+      Tablero.SetFocus()  
+  Endif
 
 End
 
