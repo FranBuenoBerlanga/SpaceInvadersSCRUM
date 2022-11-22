@@ -1,33 +1,33 @@
 # Gambas Form File 3.0
 
 { Form Form
-  MoveScaled(0,0,144,95)
+  MoveScaled(0,0,139,101)
   Background = Color.LightBackground
   { Tablero DrawingArea
-    MoveScaled(4,2,135,80)
+    MoveScaled(4,2,128.5714,85.7143)
     Background = Color.ButtonForeground
     Focus = True
   }
   { Start Button
-    MoveScaled(3,84,16,6)
+    MoveScaled(3,91,16,6)
     Text = ("Jugar")
   }
   { Pause Button
-    MoveScaled(23,84,16,6)
+    MoveScaled(23,91,16,6)
     Text = ("Pausar")
   }
   { Crono #Timer
-    #MoveScaled(67,82)
+    #MoveScaled(67,90)
     Delay = 200
   }
   { Puntos Label
-    MoveScaled(94,82,13,9)
+    MoveScaled(94,89,13,9)
     Font = Font["+6"]
     Foreground = Color.Foreground
     Text = ("Puntos:")
   }
   { PuntosCon Label
-    MoveScaled(108,85,8,3)
+    MoveScaled(108,92,8,3)
     Font = Font["+6"]
   }
 }
