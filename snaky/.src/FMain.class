@@ -16,7 +16,7 @@ Private misonidoMoverse As Sound
 Public Sub Start_Click()
 
   '1º Creo una serpiente
-  culebra = New Serpiente(200, 300, Color.DarkYellow, "D")
+  culebra = New Serpiente(200, 300, Color.Blue, "D")
     Music.Load("melodia.wav")
     Music.Volume = 40
     Music.Play
@@ -110,4 +110,3 @@ Public Sub Tablero_KeyPress()
   Endif  
 
 End
-
