@@ -25,8 +25,9 @@ Public Sub _new(nuevaposX As Short, nuevaposY As Short, nuevocolor As Integer, n
  
    posX = nuevaposX
   posY = nuevaposY
-  colorCuadrado = Color.RGB(Rand(0, 266), Rand(0, 266), Rand(0, 266))
+  colorCuadrado = nuevocolor
   lado = nuevolado
+  
 
  
  End
@@ -78,6 +79,8 @@ Public Sub pintarse(tablero As DrawingArea)
 End
 
 
+
+
 'GETTERS
 
 Public Function getX() As Short
@@ -103,4 +106,9 @@ Public Function getColor() As Integer
   Return colorCuadrado
  
 End
+
+Public Sub setColor(nuevoColor As Integer)
+  colorCuadrado = nuevoColor
+End
+
 
