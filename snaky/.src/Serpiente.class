@@ -15,6 +15,7 @@ Private listaCuadrados As New Cuadrado[]
 Private direccion As String
 
 
+
 '####################################################
 
 'COMPORTAMIENTO - MÉTODOS
@@ -29,8 +30,14 @@ Public Sub _new(nuevaX As Short, nuevaY As Short, colorSerpiente As Integer, nue
 
 
      Dim cabeza As Cuadrado
-     
-     cabeza = New Cuadrado(100, 20, Color.DarkYellow, 20)
+
+    
+    Dim escoge, miColor As Integer
+    
+
+    
+
+     cabeza = New Cuadrado(100, 20, Color.Violet, 20)
      '¿cuál será el "ancho" de mi serpiente?
      
      ' Nos han definido la serpiente como de 20px
@@ -47,7 +54,67 @@ Public Sub _new(nuevaX As Short, nuevaY As Short, colorSerpiente As Integer, nue
       
 End
 
+
+Public Function colorRandom() As Integer
+  Dim escoge, miColor As Integer
+   escoge = Rand(1, 3)
+    If (escoge = 1) Then
+      miColor = Color.Red
+
+    Else If (escoge = 2) Then
+      miColor = Color.Green
+    Else
+      miColor = Color.Blue
+    Endif
   
+  Return miColor
+  
+End
+
+'Comportamiento de crecer la serpiente
+Public Sub crecer() 
+  ' Dim cabeza As Cuadrado
+    
+    ' Dim tono1, tono2, tono3, escoge, miColor As Integer
+    ' 
+    ' cabeza = listaCuadrados[0]
+    ' 
+    ' ' tono1 = Color.Rgb(255, 0, 0)          
+    ' ' tono2 = Color.Rgb(0, 255, 0)
+    ' ' tono3 = Color.Rgb(0, 0, 255)
+    ' 
+    ' 
+    ' 
+    ' escoge = Rand(1, 3)
+    ' If (escoge = 1) Then
+    '   miColor = Color.Red
+    ' 
+    ' Else If (escoge = 2) Then
+    '   miColor = Color.Green
+    ' Else
+    '   miColor = Color.Blue
+    ' Endif
+    
+        
+    
+   Dim cabeza As Cuadrado
+   Dim nuevaCabeza As Cuadrado
+  
+
+   cabeza = listaCuadrados[0]
+   cabeza.setColor(colorRandom())
+
+   
+   '1º creamos un cuadrado super nuevo     
+   nuevaCabeza = New Cuadrado(cabeza.getX(), cabeza.getY(), Color.Violet, cabeza.getLado())
+   
+   '2ºañadimos la nueva Cabeza
+   listaCuadrados.Add(nuevaCabeza, 0)
+      
+   '3ºmovemos la cabeza a su nueva posición
+   nuevaCabeza.moverse(direccion)
+  
+End
 
 'Comportamiento de moverse la serpiente
 Public Sub moverse() 
@@ -59,29 +126,6 @@ Public Sub moverse()
    listaCuadrados.Pop()
   
 End
-
-
-'Comportamiento de crecer la serpiente
-Public Sub crecer() 
-  
-   Dim cabeza As Cuadrado
-   Dim nuevaCabeza As Cuadrado
-  
-
-   cabeza = listaCuadrados[0]
-   
-   '1º creamos un cuadrado super nuevo     
-   nuevaCabeza = New Cuadrado(cabeza.getX(), cabeza.getY(), cabeza.getColor(), cabeza.getLado())
-   
-   '2ºañadimos la nueva Cabeza
-   listaCuadrados.Add(nuevaCabeza, 0)
-      
-   '3ºmovemos la cabeza a su nueva posición
-   nuevaCabeza.moverse(direccion)
-
-  
-End
-
 
 
 
@@ -153,6 +197,3 @@ Public Sub cambiaDir(letra As String)
   Endif
         
 End
-
-
-
