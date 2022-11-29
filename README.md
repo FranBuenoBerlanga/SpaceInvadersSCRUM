@@ -35,3 +35,7 @@ Domingo 20 de noviembre: Teníamos dos ramas creadas, una para Snake y otro para
 Lunes 21 de noviembre: Adrián realizó el día anterior sus diagramas y posteriormente los subió. Le comentamos dudas al profesor sobre los diagramas de clases y objetos. Una vez resuelta las dudas, Luis actualizó su diagrama de clases y terminó su diagrama de objetos. Hubo un error por parte mía al subir el día anterior el proyecto de SpaceInvaders porque fusioné dos proyectos de Spaceinvaders y era imposible ejecutar el programa. Debido a esto, creé un proyecto nuevo donde plasmaba todas las líneas de código que teniamos antes y lo subí al repositorio eliminando el anterior. Más tarde realizamos una última reunión donde comentamos todo lo realizado. Fran realizó sus diagramas de casos de uso y posteriormente los subió. Luis eliminó archivos innecesarios que se habían creado y Adrián también actualizó sus diagramas. 
 
 Martes 22 de noviembre: Se han actualizado los diagramas, ya que teníamos algunos errores que no conocíamos anteriormente.
+
+Viernes 25 de noviembre: Lorena actualizó el proyecto de la serpiente, añadiendole el cambio de color del cuadrado de la cabeza y los cambios aleatorios entre verde, azul y rojo de los cuadados del cuerpo.
+
+Lunes 28 de noviembre: Adri modificó los diagramas de clase y objeto del proyecto de la serpiente.
