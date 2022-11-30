@@ -7,7 +7,8 @@ public class DisparoAliado {
 
     private float posX, posY;
     private float velX, velY;
-    static Texture img;
+    NaveAliada Aliado;
+    Texture img;
     SpriteBatch batch;
     //private boolean meHanDisparado;
 
@@ -16,19 +17,19 @@ public class DisparoAliado {
         posY = nposY;
         velX = 0.0f;
         velY = 0.5f;
-        img = new Texture("laserRed.png");
+        img = new Texture("DisparoAliado.png");
         //meHanDisparado=false;
     }
 
 
     public void pintarse(SpriteBatch tablero) {
 
-        tablero.draw(img, NaveAliada.getPosX(), NaveAliada.getPosY());
+        tablero.draw(img, Aliado.getPosX(), Aliado.getPosY());
 
     }
 
     //Disposar
-    public static void dispose() {
+    public void dispose() {
 
         if (img != null) {
             img.dispose();
@@ -44,8 +45,7 @@ public class DisparoAliado {
     public boolean colisiona(NaveEnemiga otraNave) {
 
         boolean colisiona = false;
-
-        if ((posX == otraNave.getPosX() && posY == otraNave.getPosY())) {
+        if (posX == otraNave.getPosX() && posY == otraNave.getPosY()) {
             colisiona = true;
             DisparoAliado.dispose();
         }

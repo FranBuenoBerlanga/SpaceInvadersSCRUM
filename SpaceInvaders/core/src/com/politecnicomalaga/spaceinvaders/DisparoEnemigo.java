@@ -7,7 +7,8 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 public class DisparoEnemigo {
     private float posX, posY;
     private float velX, velY;
-    static Texture img;
+    NaveEnemiga Enemigo;
+    Texture img;
     SpriteBatch batch;
     //private boolean meHanDisparado;
 
@@ -16,19 +17,19 @@ public class DisparoEnemigo {
         posY = nposY;
         velX= 0.0f;
         velY= -0.5f;
-        img = new Texture("laserRed.png");
+        img = new Texture("DisparoAliado.png");
         //meHanDisparado=false;
     }
 
 
     public void pintarse(SpriteBatch tablero){
 
-        tablero.draw(img, NaveEnemiga.getPosX(),NaveEnemiga.getPosY());
+        tablero.draw(img, Enemigo.getPosX(), Enemigo.getPosY());
 
     }
 
     //Disposar
-    public static void dispose() {
+    public void dispose() {
 
         if (img != null){
             img.dispose();

@@ -25,8 +25,8 @@ public class NaveEnemiga {
         moverseIzq = true;
         moverseDer = true;
         img = new Texture("NaveEnemiga.png");
-        velX = 0f;
-        velY = 0f;
+        velX = 0.6f;
+        velY = 0.6f;
     }
 
     //Pintarse
@@ -46,14 +46,14 @@ public class NaveEnemiga {
     }
 
     //GETTERS
-    public static float getPosX() {
+    public float getPosX() {
         return posX;
     }
 
     public void setPosX(float posX) {
         this.posX = posX;
     }
-    public static float getPosY() {
+    public float getPosY() {
         return posY;
     }
 

@@ -24,8 +24,8 @@ public class NaveAliada {
         moverseIzq = false;
         moverseDer = false;
         img = new Texture("NaveAliada.png");
-        velX = 0f;
-        velY = 0f;
+        velX = 0.5f;
+        velY = 0.5f;
 
     }
 
@@ -47,25 +47,12 @@ public class NaveAliada {
 
     //Moverse
     public void moverse(String letra) {
-
-        if (letra == "A" || letra == "a") {
-            moverseIzq = true;
-            posX = posX + velX * (- signoX);
-        }
-        //WHILE EL BOTON SIGA PULSADO
-
-        if (letra == "d" || letra == "D") {
-            moverseDer = true;
-            posX = posX + velX * signoX;
-        }
-        //WHILE EL BOTON SIGA PULSADO
-
     }
 
     // estaviva?
 //GETTERS
 
-    public static float getPosX() {
+    public float getPosX() {
 
         return posX;
     }
@@ -75,7 +62,7 @@ public class NaveAliada {
         this.posX = posX;
     }
 
-    public static float getPosY() {
+    public float getPosY() {
 
         return posY;
     }
