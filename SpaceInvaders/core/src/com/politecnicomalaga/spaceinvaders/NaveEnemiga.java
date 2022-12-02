@@ -24,15 +24,15 @@ public class NaveEnemiga {
         estaviva = true;
         moverseIzq = true;
         moverseDer = true;
-        img = new Texture("NaveEnemiga.png");
-        velX = 0.6f;
+        img = new Texture("NaveAliada.png");
+        velX = 52.6f;
         velY = 0.6f;
     }
 
     //Pintarse
     public void pintarse(SpriteBatch tablero){
 
-        tablero.draw(img, 100, 100);
+        tablero.draw(img, posX, posY);
 
     }
 
