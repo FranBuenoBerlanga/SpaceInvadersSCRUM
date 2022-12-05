@@ -39,3 +39,5 @@ Martes 22 de noviembre: Se han actualizado los diagramas, ya que teníamos algun
 Viernes 25 de noviembre: Lorena actualizó el proyecto de la serpiente, añadiendole el cambio de color del cuadrado de la cabeza y los cambios aleatorios entre verde, azul y rojo de los cuadados del cuerpo.
 
 Lunes 28 de noviembre: Adri modificó los diagramas de clase y objeto del proyecto de la serpiente.
+
+Viernes 2 de diciembre: Lorena actualizó la nave para que se pintara donde le indicasen los par
