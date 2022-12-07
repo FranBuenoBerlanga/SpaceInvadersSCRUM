@@ -47,7 +47,7 @@ public class DisparoAliado {
         boolean colisiona = false;
         if (posX == otraNave.getPosX() && posY == otraNave.getPosY()) {
             colisiona = true;
-            DisparoAliado.dispose();
+           //DisparoAliado.dispose();
         }
         return colisiona;
     }
