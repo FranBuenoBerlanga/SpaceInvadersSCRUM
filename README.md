@@ -40,4 +40,6 @@ Viernes 25 de noviembre: Lorena actualizó el proyecto de la serpiente, añadien
 
 Lunes 28 de noviembre: Adri modificó los diagramas de clase y objeto del proyecto de la serpiente.
 
-Viernes 2 de diciembre: Lorena actualizó la nave para que se pintara donde le indicasen los par
+Viernes 2 de diciembre: Lorena actualizó la nave para que se pintara donde le indicasen los parámetros.
+
+Miércoles 7 de diciembre: Lorena ha subido la clase rafaga disparoaliado y Luis ha subido una actualización de los diagramas de clase y objeto del space invaders.
