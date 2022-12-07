@@ -10,3 +10,9 @@ asistir. Tratamos las actualizaciones que fuimos haciendo en el tiempo entre la 
 del proyecto de la serpiente, Lorena actualizó dicho proyecto añadiendole las modificaciones de los colores, Manuel sigió trabajando en los disparos de la nave, Sergio 
 empezó ha hacer la clase main de la nave ( Las mejoras de la nave no están subidas a github a día de hoy) y tanto Luis como yo hemos estado lo suficientemente ocupados 
 con nuestras respectivas presentaciones de sistemas que no hemos actualizado los diagramas de clase y objetos del proyecto de space invaders.
+
+El miércoles 7 de diciembre tuvimos la última reunión antes de la entrega del cuarto sprint, Manuel no se pudo presentar por razones de horario de trabajo y Sergio llegó 
+tarde, Lorena ha creado un método que permite que la nave se mueva, poniendo límites que la nave no puede atravesar, ha escrito el código necesario
+para que se pinten las balas cada 30 frames, Manuel ha estado trabajando en el disparo de la nave además de crear la clase rafagadisparoaliada, aún tiene algunas
+complicaciones a la hora de subir el contenido a github, Sergio y Fran están trabajando en la clase escuadrón, Luis está trabajando en los diagramas de clase y objeto del
+space invaders y Adri ya terminó con los driagramas de clase y objeto del snake.
