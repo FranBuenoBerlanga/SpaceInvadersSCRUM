@@ -22,7 +22,7 @@ public class GDXSpaceInvaders extends ApplicationAdapter {
 		//Este juego esta a 60 fps, si queremos que los disparos vayan a 30 fps: 60%2==0;
 		//pasos =0;
 
-		//img3 = new Texture("DisparoALiado.png");
+		img3 = new Texture("DisparoALiado.png");
 
 	}
 
